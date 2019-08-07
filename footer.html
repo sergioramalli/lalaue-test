@@ -1,0 +1,140 @@
+<!--main-body-close-->
+        <br>
+        <br>
+        </div>
+        <div class="row"></div>
+        <div class="clearfix"></div>
+        <div class="container">
+            <footer class="footer">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <center>
+
+                            <p class="text-muted">
+                                <small>
+                                    The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of La-Laue.
+                                    <br>
+                                    © 2016 - <?php echo date('Y'); ?>
+                                </small>
+                            </p>
+                            
+                        </center>
+
+                        <div class="text-center center-block">
+                            <a href="https://www.facebook.com/lalaue.capoeira"><i id="social-fb" class="fa fa-facebook-square fa-3x social-button"></i></a>
+                            <a href="https://twitter.com/lalaue_capoeira"><i id="social-tw" class="fa fa-twitter-square fa-3x social-button"></i></a>
+                            <a href="https://www.youtube.com/lalauecom"><i id="social-yt" class="fa fa-youtube-square fa-3x social-button"></i></a>
+                            <a href="https://www.instagram.com/lalaue.capoeira/"><i id="social-ig" class="fa fa-instagram fa-3x social-button"></i></a>
+                        </div>  
+                            
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="row"></div>
+        <div class="m-b-20"></div>
+    <!-- script for pagination -->    
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            getExistingData(0, 50);
+        });
+
+        
+
+        function view(rowID) {
+            $.ajax({
+                url: 'ajax.php',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    key: 'getViewData',
+                    rowID: rowID
+                }, success: function (response) {
+                    $("#showContent").fadeIn();
+                    $("#editContent").fadeOut();
+                    $("#contentName").html(response.contentName);
+                    $("#shortDesc").html(response.shortDesc);
+                    $("#longDesc").html(response.longDesc);
+                    $("#tableManager").modal('show');
+                    
+                }
+            });
+        }
+
+        function getExistingData(start, limit) {
+            $.ajax({
+                url: 'ajax.php',
+                method: 'POST',
+                dataType: 'text',
+                data: {
+                    key: 'getExistingData',
+                    start: start,
+                    limit: limit
+                }, success: function (response) {
+                    if (response != "reachedMax") {
+                        $('tbody').append(response);
+                        start += limit;
+                        getExistingData(start, limit);
+                    } else
+                        $(".table").DataTable();
+                }
+            });
+        }
+
+        
+    </script>    
+    <!-- end script pagination -->
+    </body>
+<div id="fb-root"></div>
+</html>
+<style type="text/css">
+    
+.social-button:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social-button {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+     color: #5a9047b0 !important;
+
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #3B5998 !important;
+ }
+ #social-yt:hover {
+     color: #d34836 !important;
+ }
+ #social-ig:hover {
+     color: #c1548b !important;
+ }
+ #social-tw:hover {
+     color: #4099FF !important;
+ }
+
+/*background for pagination*/
+#imagebackground {
+  background-image: url(), url(public/images/paper.jpg);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+        
+
+</style>

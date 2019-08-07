@@ -1,0 +1,205 @@
+.main-nav-search-div{
+    width: 444px;
+    padding-top: 2px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+.navbar-inverse .navbar-nav li a {
+    color: #FFFFFF;
+}
+.navbar-inverse .navbar-nav ul li a {
+    color: black;
+}
+
+.profile_icon_a{
+    padding:0px !important;
+    margin: 0px;
+    float: left;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-left: 6px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    top: 5px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#317292;
+}
+
+.main-nav-search-div-header {
+    width: 300px;
+    float: left;
+    box-shadow: none;
+    border: none;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}
+
+@media (min-width: 1015px) {
+    .navbar-header {
+        display: inline-flex;
+    }
+    .main-nav-search-div-header {
+        width: 275px;
+        float: left;
+        box-shadow: none;
+        border: none;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 1015px) {
+    .main-nav-search-div-collapse {
+        width: 300px;
+        float: left;
+        box-shadow: none;
+        border: none;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+}
+
+.profile-icons{
+    margin-right: 10px;
+    color: white;
+}        
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 6 0px 6px 6px;
+    -moz-border-radius: 6 0px 6px;
+    border-radius: 6px 0px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.navbar-right-margin{
+    padding-right: 15px;
+}
+
+#mestre p, #mestre li{
+    font-size: 14px;
+}
+
+.panel-tab{
+    padding: 10px;
+}
+
+.navbar-brand h2{
+    font-size: 24px;
+    margin-top: 12px !important;
+    color: white;
+    line-height: 0px;
+}
+
+#hidden-nav-span{
+    float: left;
+    width: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+nav li {
+    padding-top: 5px;
+}
+
+.nav-signup-button {
+    padding-top: 2px;
+}
+
+.navbar {
+    border-bottom: none;
+    background-color: #46AC88 !important;
+}
+
+
+
+nav.navbar.navbar-inverse{
+    width: 102%;
+    padding-left: 1%;
+    margin-left: -1%;
+}
+
+
+.btn-signin-nav{
+  margin: -5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.result-top-nav{
+    margin-right:20px;
+    width:auto; 
+    float:left;
+}
+
+.result-top-nav a:focus, .result-top-nav a:hover{
+    text-decoration: none;
+}
